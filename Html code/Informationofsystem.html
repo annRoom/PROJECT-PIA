@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT PIA</title>
+    <link rel="icon" href="https://i.ibb.co/dg2Y6h3/TEAM-03.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"          rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Scribble&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <link href="Home.HTML" rel="navegation-link">
+    <link href="Know us.HTML" rel="navegation-link">
+    <style>
+        /*Estilo de la pagina*/
+        h1 {
+             font-family: "Oswald", sans-serif;
+             font-size: 50px;
+             font-weight: 700;
+            }
+        h2 {
+            font-family: "Bebas Neue", sans-serif; 
+            font-weight: 700;
+            text-align: center;
+            font-size: 36px;
+            color: #21130d
+        	}
+        h3 {
+            font-family: "Bebas Neue", sans-serif; 
+            font-weight: 700;
+            font-size: 30px;
+            color: #21130d;
+            padding: 00px 50px 00px;
+            text-align: left;
+        }
+        body {
+            font-family: "Times New Romans", serif; 
+            font-weight: 900;
+            color: white;
+            font-size: 20px;
+            margin: 0;
+            background-image: url('https://pymstatic.com/94807/conversions/sistema-oseo-wide.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        P{
+          font-family: "Truculenta", sans-serif; 
+          color: #252424;
+          font-weight: 700;
+          font-size: 28px;
+          padding: 00px 50px 00px;
+          margin-top: 10px;
+          margin: 05px;
+        }
+        b {
+        color: #000;
+        font-size: 30px;
+        }
+        r {
+        color: #b62727;
+        }
+        a {
+          text-decoration: none; 
+          color: #000; 
+        }
+        g{
+        color: #333232;
+        font-style: italic;
+        }
+        a:hover {
+        color: #333; 
+        }
+
+        /*Estilo del menu y submenu*/
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            }
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 10px;
+            }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            position: relative;
+            }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            }
+        nav ul li a:hover {
+            color: #2a2c33;
+            }
+        .content {
+            color: #121212;
+            text-align: center;
+            padding: 20px;
+            }
+        .translucent-bg {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: rgb((255, 255, 255), 0, 0); 
+            padding: 20px;
+            border-radius: 100px; 
+            }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            }
+        .subnavegation {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #9985da53;
+            padding: 10px;
+            }
+        .subnavegation li {
+            display: block;
+            margin-bottom: 8px;
+            }
+        nav ul li:hover .subnavegation {
+            display: block;
+            }
+        .subnavegation a {
+            color: #232323;
+            }
+        .subnavegation a:hover {
+            color: #2a2c33;
+            }
+        .carousel { 
+            width: 40%; 
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-image {
+            width: 100%;
+            flex: 0 0 auto;
+        }
+        .carousel-image img {
+            width: 100%;
+        }
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px; 
+            font-size: 16px; 
+            z-index: 1;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+        .info, .carousel {
+            width: 50%;
+        }
+        .info2, .galery {
+            width: 50%;
+        }
+        .info3, .imagen {
+            width: auto;
+        }
+        .imagen {
+            float: left;
+        }
+        .thumbnail {
+        width: 400px;
+        height: 250px;
+        margin: 5px;
+        overflow: hidden;
+        float: right;
+        }
+        .enlarged {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        display: none;
+        }
+        .thumbnail img {
+            width: 100%; 
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SKELETAL SYSTEM</h1>
+    </header>
+    <nav>
+        <div id="menu">
+            <ul>
+                <li class="navigation__item">
+                    <a href="Home.HTML" class="navigation__link" >Home page</a>
+                <li class="navigation__item">
+                    <a href="Informationofsystem" class="navigation__link" >Information of body system</a>
+                    <ul class="subnavegation">
+                        <li><a href="#Definition">Definition</a></li>
+                        <li><a href="#Function">Function</a></li>
+                        <li><a href="#Parts">Parts</a></li>
+                        <li><a href="#Our problem">Our Problem</a></li>
+                    </ul>
+                <li class="navigation__item">
+                    <a href="CONOCENOS.HTML" class="navigation__link" >Information of the robotic</a>
+                <li class="navigation__item">
+                    <a href="CONOCENOS.HTML" class="navigation__link" >Programming</a>
+                <li class="navigation__item">
+                    <a href="Know us.HTML" class="navigation__link" >Know us</a>
+            </ul>
+        </div>
+    </nav>
+      <div class="translucent-bg">
+        <div id="Definition">
+            <h2>What is the skeletal system?</h2>
+            <p> Complex and complete structure composed of the 206 bones of the human skeleton, as well as the cartilage, ligaments and tendons that allow them to properly connect to the muscles or other bones, is called the skeletal system 
+            <a href="https://www.ejemplo.com" target="_blank"> The skeletal system gives your body its shape and holds your organs in place. In the simplest terms, your skeletal system is your body’s most important support structure. But it’s more than just your skeleton and bones. </a> </p> 
+        </div>
+                <br>
+                <br>
+
+        <div id="Function">
+            <h2>What are the functions of the skeletal system?</h2>
+            <h3>The skeletal system fulfills the following functions: </h3>
+            <p>- <b>Structure:</b> The bones of the skeleton give the human body its defined shape and determine its posture. They provide rigidity and support to soft tissues, keeping everything in its respective place. </p>
+            <p>- <b>Protection:</b> Being hard and inflexible pieces, bones serve as an internal shield, as protection against forces coming from outside the body, isolating and defending vital organs. </p>
+            <p>- <b>Motion:</b> Along with the muscles, the bones provide the body with the possibility of voluntary coordinated movement, thus being able to move, use tools, etc. </p>
+            <p>- <b>Hematopoiesis:</b> Different types of blood cells, and even regulatory substances, are generated in the bone marrow. </p>
+            <p>- <b>Storage:</b> Various minerals such as calcium and phosphorus are stored in the bones, not only to provide them with hardness, but to later use them as an input in muscle contraction and other organic processes, thus being a last-minute resource store. On the other hand, bones also allow the storage of certain types of lipids, in the yellow marrow inside.</p>-
+        </div>
+                <br>
+                <br>
+
+        <div id="Parts">
+            <h2>Parts of the skeletal system</h2>
+        <div class="container">
+            <div class="carousel">
+                <div class="carousel-images"> 
+                  <img class="carousel-image" src="https://www.visiblebody.com/hs-fs/hub/189659/file-2387041747-jpg/Learn_Articles/Skeleton_System/Set_3_Axial_Skeleton/1C-Axial-Skeleton-1232W.jpg" alt="Imagen 1" frameborder="0" allowfullscreen="true"  width="50" height="400">
+                  <img class="carousel-image" src="https://www.visiblebody.com/hs-fs/hub/189659/file-2379738528-jpg/Learn_Articles/Skeleton_System/Set_2_Appendicular_Skeleton/2B-Appendicular-Skeleton-1232W.jpg" alt="Imagen 2" frameborder="0" allowfullscreen="true"  width="50" height="400">
+                </div>
+                <div class="prev">&#10094;</div>
+                <div class="next">&#10095;</div>
+              </div>
+              <script>
+                const carouselImages = document.querySelector('.carousel-images');
+                const prevBtn = document.querySelector('.prev');
+                const nextBtn = document.querySelector('.next');
+                let counter = 0;
+                const width = document.querySelector('.carousel-image').clientWidth;
+                nextBtn.addEventListener('click', () => {
+                  if (counter >= 4) return;
+                  counter++;
+                  carouselImages.style.transform = `translateX(${-width * counter}px)`;
+                });
+                prevBtn.addEventListener('click', () => {
+                  if (counter <= 0) return;
+                  counter--;
+                  carouselImages.style.transform = `translateX(${-width * counter}px)`;
+                });
+              </script>
+            <div class="info">
+            <h3>The skeletal system is divided into two sets of bones:</h3>
+            <p>- <b>The axial skeleton.</b> It is a set of bones distributed near the axis of the body (hence its name: axis means "axis" in Latin) and that fulfill the functions of supporting and protecting vital organs.</p>
+            <p>- <b>The appendicular skeleton.</b> It is a set of bones that make up the appendages, that is, the extremities or parts attached to the axis of the body, such as the head, arms and legs.</p>
+            </div>
+            </div>
+        <h3>Bones are usually classified based on their shape, as follows:</h3>
+        <div class="container">
+            <div class="info2">
+            <p>- <b>Long bones.</b> It is a set of bones distributed near the axis of the body (hence its name: axis means "axis" in Latin) and that fulfill the functions of supporting and protecting vital organs.</p>
+            <p>- <b>Short bones.</b> They are approximately the same length as width. Short bones are located in the wrist and ankle joints and provide stability and allow some movement. The carpal bones in the wrist (scaphoid, lunate, triquetrum, hamate, pisiform, capitate, trapezoid and trapezius) and the tarsals in the ankles (calcaneus, talus, navicular, cuboid, lateral cuneiform, intermediate cuneiform and medial cuneiform) are examples of short bones.</p>
+            <p>- <b>Flat bones.</b>There are flat bones in the bone structure of the head (occipital, parietal, frontal, nasal, lacrimal and vomer), the rib cage (sternum and ribs) and the pelvis (ilium, ischium and pubis). The function of flat bones is to protect internal organs such as the brain, heart and pelvic organs. Flat bones are somewhat flattened and can provide protection, like a shield; Flat bones can also provide large areas for muscle attachment.</p>
+            <p>- <b>Sesamoid bones.</b> They are bones that are included in tendons. These small round bones are usually found in the tendons of the hands, knees, and feet. The function of the sesamoid bones is to protect the tendons from stress and deterioration. The kneecap, commonly called the patella, is an example of a sesamoid bone.</p>
+            <p>- <b>Irregular bones.</b> They vary in shape and structure and therefore do not fit into any other category (flat, short, long or sesamoid). They often have a rather complex shape, which helps protect internal organs. For example, the vertebrae, irregular bones in the spine, protect the spinal cord. The irregular bones of the pelvis (pubis, ilium and ischium) protect organs in the pelvic cavit</p>
+            </div>
+            <div class="galery">
+            <div class="thumbnail" onclick="showImage('https://www.visiblebody.com/hs-fs/hub/189659/file-2122067634-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/3-Long-Bones-1232W.jpg')">
+                <img src="https://www.visiblebody.com/hs-fs/hub/189659/file-2122067634-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/3-Long-Bones-1232W.jpg" alt="Imagen 1">
+            </div>
+            <div class="thumbnail" onclick="showImage('https://www.visiblebody.com/hs-fs/hub/189659/file-2122072739-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/4-Short-Bones-1232W.jpg')">
+                <img src="https://www.visiblebody.com/hs-fs/hub/189659/file-2122072739-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/4-Short-Bones-1232W.jpg" alt="Imagen 2">
+            </div>
+            <div class="thumbnail" onclick="showImage('https://www.visiblebody.com/hs-fs/hub/189659/file-2122067669-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/2-Flat-Bones-1232W.jpg')">
+                <img src="https://www.visiblebody.com/hs-fs/hub/189659/file-2122067669-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/2-Flat-Bones-1232W.jpg" alt="Imagen 3">
+            </div>
+            <div class="thumbnail" onclick="showImage('https://www.visiblebody.com/hs-fs/hub/189659/file-2122067639-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/5-Sesamoid-Bones-1232W.jpg')">
+                <img src="https://www.visiblebody.com/hs-fs/hub/189659/file-2122067639-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/5-Sesamoid-Bones-1232W.jpg" alt="Imagen 4">
+            </div>
+            <div class="thumbnail" onclick="showImage('https://www.visiblebody.com/hs-fs/hub/189659/file-2122067669-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/2-Flat-Bones-1232W.jpg')">
+                <img src="https://www.visiblebody.com/hs-fs/hub/189659/file-2122072724-jpg/Learn_Articles/Skeleton_System/Set_1_Bone_Types/6-Irregular-Bones-1232W.jpg" alt="Imagen 5">
+            </div>
+            <div id="enlarged-image" class="enlarged" onclick="hideImage()">
+                <img id="enlarged-img" src="" alt="Imagen agrandada">
+            </div>
+            </div>
+        </div>
+                <script>
+    function showImage(imageSrc) {
+        var enlargedImg = document.getElementById('enlarged-img');
+        enlargedImg.src = imageSrc;
+        document.getElementById('enlarged-image').style.display = 'block';
+    }
+    function hideImage() {
+        document.getElementById('enlarged-image').style.display = 'none';
+    }
+                </script>
+        <h3> Main bones of the skeleton: </h3>
+                <p>- <b>Skull.</b> It is the hardest bone in the human body and protects the most vital organ of all: the brain.</p>
+                <p>- <b>Ribs.</b> They are bones that extend in symmetrical pairs in the torso and make up the rib cage that protects the lungs and heart.</p>
+                <p>- <b>Radius and ulna.</b> They are the main bones of the forearms that extend in tandem and connect the bones of the hand with those of the arm.</p>
+                <p>- <b>Humerus.</b> It is the main bone of the arm that connects the bones of the forearm to those of the shoulder.</p>
+                <p>- <b>Pelvis.</b>  It is the main bone of the hip and one of the largest in the body, connecting the vertebral column with the bones of the legs.</p>
+                <p>- <b>Femur.</b> It is the bone of the upper part of the leg and is the longest in the body.</p>
+                <p>- <b>Tibia and fibula.</b> They are bones that run parallel in the lower leg. They connect the femur to the bones of the foot.</p>
+        </div>
+                <br>
+                <br>
+
+        <div id="Our case">
+        <h3> Specification in our case </h3>
+                <div class= "container">
+                    <div class="info3">
+            <p> <r>Injured bone:</r> Right humerus <g>The humerus is the longest and most proximal bone of the upper (or anterior) limb in tetrapods, including humans. It is located in the arm region.</p>
+            <p> <r>Injury:</r> Fracture</p>
+            <p> <r>Bone type:</r> Long</p>
+            <p> <r>Type of skeleton to which it belongs:</r> Appendicular skeleton</p>
+            <p> <r>Area of the appendicular skeleton to which it belongs:</r> Upper limbs</p>
+            <p> <r>Treatment:</r> Application of organic polymer to the site of the injury, a flexible and soft material that solidifies when a small electric shock is applied thanks to the function of the microrobot, in addition to ejecting the polymer into the fracture area.</p>  
+                </div> 
+                    <div class="imagen">
+                        <img src=" https://i.ibb.co/51qdVD5/lona2.png"  frameborder="50" allowfullscreen="true"  width="300" height="350">
+                    </div>
+                </div>  
+        </div>
+                <br>
+                <br>
+
+        </div>
+</html>
